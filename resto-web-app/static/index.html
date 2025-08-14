@@ -12,17 +12,17 @@
         <form id="calcForm" onsubmit="return false;">
             <div class="input-group">
                 <label for="euro">Сума в евро (€):</label>
-                <input type="text" id="euro" placeholder="0.00">
+                <input type="text" id="euro" placeholder="0.00" inputmode="decimal" pattern="[0-9.,]*">
                 <div class="error-message" id="euro-error"></div>
             </div>
             <div class="input-group">
                 <label for="bgn">Сума в лева (лв):</label>
-                <input type="text" id="bgn" placeholder="0.00">
+                <input type="text" id="bgn" placeholder="0.00" inputmode="decimal" pattern="[0-9.,]*">
                 <div class="error-message" id="bgn-error"></div>
             </div>
             <div class="input-group">
                 <label for="price">Цена на продукта в евро (€):</label>
-                <input type="text" id="price" placeholder="0.00">
+                <input type="text" id="price" placeholder="0.00" inputmode="decimal" pattern="[0-9.,]*">
                 <div class="error-message" id="price-error"></div>
             </div>
             <button type="button" id="calcBtn" onclick="calculate()">Изчисли</button>
