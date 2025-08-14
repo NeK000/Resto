@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ресто</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+    <h1>Ресто</h1>
+        <form id="calcForm" onsubmit="return false;">
+            <div class="input-group">
+                <label for="euro">Сума в евро (€):</label>
+                <input type="text" id="euro" placeholder="0.00">
+                <div class="error-message" id="euro-error"></div>
+            </div>
+            <div class="input-group">
+                <label for="bgn">Сума в лева (лв):</label>
+                <input type="text" id="bgn" placeholder="0.00">
+                <div class="error-message" id="bgn-error"></div>
+            </div>
+            <div class="input-group">
+                <label for="price">Цена на продукта в евро (€):</label>
+                <input type="text" id="price" placeholder="0.00">
+                <div class="error-message" id="price-error"></div>
+            </div>
+            <button type="button" id="calcBtn" onclick="calculate()">Изчисли</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script src="/script.js"></script>
+</body>
+</html>
