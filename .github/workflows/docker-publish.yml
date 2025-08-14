@@ -32,4 +32,4 @@ jobs:
           context: .
           file: .docker/Dockerfile
           push: true
-          tags: ghcr.io/nek000/resto-app:${{ env.TAG }}
+          tags: ghcr.io/nek000/resto-web-app:${{ env.TAG }}
