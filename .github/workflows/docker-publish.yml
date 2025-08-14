@@ -1,4 +1,8 @@
+
 name: Build and Publish Docker Image
+permissions:
+  contents: read
+  packages: write
 
 on:
   push:
@@ -32,4 +36,4 @@ jobs:
           context: .
           file: .docker/Dockerfile
           push: true
-          tags: ghcr.io/nek000/resto:${{ env.TAG }}
+          tags: ghcr.io/nek000/resto-web-app:${{ env.TAG }}
