@@ -1,0 +1,7 @@
+version: '3.8'
+services:
+  resto-web-app:
+    image: ghcr.io/nek000/resto-web-app:${TAG:-latest}
+    ports:
+      - "8080:80"
+    restart: unless-stopped
