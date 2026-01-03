@@ -74,7 +74,15 @@ function calculate() {
     const totalEuro = euroFromBGN + euro;
     const change = totalEuro - price;
 
-    resultDiv.innerHTML =
-        `<strong>Общо дадена сума:</strong> <b>${totalEuro.toFixed(2)} евро</b>.<br>` +
-        `<strong>Ресто за връщане:</strong> <b>${change.toFixed(2)} евро</b>.`;
+    // Build clearer result markup with classes that match CSS
+    resultDiv.innerHTML = `
+      <div class="result-row">
+        <div class="result-label"><strong>Общо дадена сума:</strong></div>
+        <div class="result-value"><span class="result-number">${totalEuro.toFixed(2)}</span><span class="result-unit">€</span></div>
+      </div>
+      <div class="result-row">
+        <div class="result-label"><strong>Ресто:</strong></div>
+        <div class="result-value"><span class="result-number">${change.toFixed(2)}</span><span class="result-unit">€</span></div>
+      </div>
+    `;
 }
