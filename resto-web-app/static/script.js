@@ -74,15 +74,29 @@ function calculate() {
     const totalEuro = euroFromBGN + euro;
     const change = totalEuro - price;
 
+    // Determine CSS class for negative values
+    const changeClass = change < 0 ? 'result-number negative' : 'result-number';
+
+    // Determine label: show 'Липсва' when negative, otherwise 'Ресто :'
+    const changeLabel = change < 0 ? 'Липсва' : 'Ресто :';
+
     // Build clearer result markup with classes that match CSS
-    resultDiv.innerHTML = `
+    let html = '';
+    // Only show the total row when change is non-negative
+    if (change >= 0) {
+      html += `
       <div class="result-row">
         <div class="result-label"><strong>Общо дадена сума:</strong></div>
         <div class="result-value"><span class="result-number">${totalEuro.toFixed(2)}</span><span class="result-unit">€</span></div>
-      </div>
+      </div>`;
+    }
+
+    html += `
       <div class="result-row">
-        <div class="result-label"><strong>Ресто:</strong></div>
-        <div class="result-value"><span class="result-number">${change.toFixed(2)}</span><span class="result-unit">€</span></div>
+        <div class="result-label"><strong>${changeLabel}</strong></div>
+        <div class="result-value"><span class="${changeClass}">${change.toFixed(2)}</span><span class="result-unit">€</span></div>
       </div>
     `;
+
+    resultDiv.innerHTML = html;
 }

@@ -101,6 +101,12 @@ button:hover {
     display: inline-block;
     vertical-align: middle;
     margin-right: 0.25em;
+    transition: color 150ms ease-in-out;
+}
+
+/* Show negative result numbers in red */
+.result-number.negative {
+    color: #e74c3c; /* red */
 }
 
 .result-unit {
